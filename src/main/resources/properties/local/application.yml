@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: gateway-mock
+  profiles:
+    active:
+      - local
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 5000000
+        response-timeout: 50000s
+#      httpserver:
+#        wiretap: true
+      actuator:
+        verbose:
+          enabled: true
+    config:
+      enabled: false
+      name: ${spring.application.name}
+      failFast: false
+      profile: config-gateway-profile
+      label: local
+server:
+  port: 8089
+logging:
+  level:
+    root: info
+
+com:
+  mock:
+    enable: true
+
+management:
+  context-path: /management
+  security:
+    enabled: false
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    enabled-by-default: true
+    web:
+      base-path: /management
+      exposure:
+        include: env,health,info,gateway
+
+mock:
+  response:
+    sampleConfigResponseKey: '{ "statusCode": 701, "statusMessage": "another sample response" }'
+
+mockgateway:
+  name: Mock API
+  apiGatewayHost: https://localhost:3000
+  mockServiceHost: http://localhost:8089
+  apis[0]:
+    mockEnabled: true
+    mockName: mockSampleApi1
+    endpointCheck: /api/sample/file
+    responseFile: true
+    mockResponse: /mock/sample.json
+    mockResponseStatus: 200
+    mockResponseMapper:
+      type: body
+      mapperKey: personId
+    order: 0
+  apis[1]:
+    mockEnabled: true
+    mockName: mockSampleApi2
+    endpointCheck: /api/sample/config
+    responseFile: false
+    mockResponse: sampleConfigResponseKey
+    mockResponseStatus: 400
+    mockResponseMapper:
+      type: param
+      mapperKey: personId
+    order: 0
