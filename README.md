@@ -20,7 +20,6 @@ This service is built on top of [Spring Cloud Gateway](https://cloud.spring.io/s
 Gateway Mock APIs depends on below software:
 - Java
 - Maven
-- IDE support required for [lombok](https://projectlombok.org/).
 
 ## Building from Source
 
@@ -42,8 +41,6 @@ OR
 mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dspring.config.location=optional:classpath:/,optional:classpath:properties/local/,optional:classpath:mock/'
 ```
 #### IDE runtime configuration
-
-This project uses [lombok](https://projectlombok.org/).
 
 ```
 -Dspring.config.location=optional:classpath:/,optional:classpath:properties/local/,optional:classpath:mock/
