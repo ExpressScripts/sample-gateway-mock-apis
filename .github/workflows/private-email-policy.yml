@@ -29,7 +29,7 @@ jobs:
         echo "Checking author email addresses..."
         echo
         read AUTHOR_EMAIL_ISSUE_CT <<< $(git log --format='%ae' | grep -c -v '@users.noreply.github.com\|noreply@github.com')
-        echo "${AUTHOR_EMAIL_ISSUE_CT} public email addresses were found in commit history "
+        echo "${AUTHOR_EMAIL_ISSUE_CT} public author email addresses were found in commit history "
         echo
         if [[ $AUTHOR_EMAIL_ISSUE_CT -gt 0 ]]
         then
@@ -38,11 +38,10 @@ jobs:
           echo "*************************"
         fi
         echo
-        echo
         echo "Checking committer email addresses..."
         echo
         read COMMITTER_EMAIL_ISSUE_CT <<< $(git log --format='%ce' | grep -c -v '@users.noreply.github.com\|noreply@github.com')
-        echo "${COMMITTER_EMAIL_ISSUE_CT} public email addresses were found in commit history "
+        echo "${COMMITTER_EMAIL_ISSUE_CT} public committer email addresses were found in commit history "
         echo
         if [[ $COMMITTER_EMAIL_ISSUE_CT -gt 0 ]]
         then
@@ -50,6 +49,5 @@ jobs:
           git log --format='%h %cn %ce' | grep -v '@users.noreply.github.com\|noreply@github.com'
           echo "*************************"
         fi
-        echo
         exit $(($AUTHOR_EMAIL_ISSUE_CT + $COMMITTER_EMAIL_ISSUE_CT))
 
