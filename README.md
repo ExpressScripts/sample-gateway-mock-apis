@@ -89,7 +89,6 @@ There are still few features which are not supported. like:
 - Dynamic configuration of mockServiceHost property.
 - Define apiGatewayHost for each mock API configuration.
 
-Few features 
 
 See: [CONTRIBUTING](CONTRIBUTING.md).
 
