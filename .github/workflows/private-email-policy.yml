@@ -24,9 +24,9 @@ jobs:
     - name: Private Email Policy Violations
       shell: bash
       run: |
-        echo "Running checks..."
+        echo "Checking for any email addresses that are NOT '@users.noreply.github.com' or 'noreply@github.com'"
         echo
-        echo "Checking for any author email addresses that are NOT '@users.noreply.github.com'"
+        echo "Checking author email addresses..."
         echo
         read AUTHOR_EMAIL_ISSUE_CT <<< $(git log --format='%ae' | grep -c -v '@users.noreply.github.com\|noreply@github.com')
         echo "${AUTHOR_EMAIL_ISSUE_CT} public email addresses were found in commit history "
@@ -39,7 +39,7 @@ jobs:
         fi
         echo
         echo
-        echo "Checking for any committer email addresses that are NOT '@users.noreply.github.com'"
+        echo "Checking committer email addresses..."
         echo
         read COMMITTER_EMAIL_ISSUE_CT <<< $(git log --format='%ce' | grep -c -v '@users.noreply.github.com\|noreply@github.com')
         echo "${COMMITTER_EMAIL_ISSUE_CT} public email addresses were found in commit history "
