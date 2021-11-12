@@ -25,7 +25,7 @@ Examples of unacceptable behavior include:
 The Express Scripts Open Source Leadership Group (the “Leadership Group”) is responsible for clarifying and enforcing this Code and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
 The Leadership Group has the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code, and will communicate reasons for moderation decisions when appropriate.
 
-#Reporting 
+# Reporting 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the Leadership Group at [opensource@express-scripts.com](mailto:opensource@express-scripts.com).   All complaints will be reviewed and investigated promptly and fairly, while respecting the privacy and security of the reporter.  We will determine if and what response is appropriate, and every matter may not result in a direct response from us. 
 Consequences for inappropriate behavior may include: (1) a warning with consequences for continued behavior; (2) restricted or suspended access to certain projects or other community members for a specific period of time; (3) temporary suspensions from participation in the community; and (4) permanent bans from participating in the community.   Factors that may be considered when imposing various consequences may include, but are not limited to, the seriousness or nature of the harm caused, repeated violations of this Code, and the impact of the activity on our broader open source community.  
 

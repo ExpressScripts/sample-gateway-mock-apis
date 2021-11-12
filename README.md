@@ -2,7 +2,7 @@
 
 Spring Cloud Gateway can be used to Mock APIs while still providing typical gateway proxying functionality. The ability to mock specific APIs can be extremely helpful during frontend or backend SDLC phases, when dependencies aren’t yet available.
 
-This service is built on top of [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/). To mock endpoints, add property based configuration at [config-props](). Configuration can also be used to add proxy configuration if needed.
+This service is built on top of [Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/). To mock endpoints, add required properties in configuration. Configuration can also be used to add proxies, if needed.
 
   - **Technology stack**: Built on top of Spring Cloud Gateway (which provides proxying capabilities) to provide mock APIs. The current version is based on Java (JDK11).
     This service can be used independently in an ecosystem of services/REST APIs like a proxy/mock APIs.
@@ -48,12 +48,12 @@ mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dspring.config.location=opt
 
 ## Configuration
 
-Refer [CONFIGURATION](CONFIGURATION.md) document for configuring Gateway Mock APIs.
+Refer to [CONFIGURATION](CONFIGURATION.md) document for configuring Gateway Mock APIs.
 
 ## Usage
 
-Refer [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway) for proxying or gateway configuration.
-Use Gateway Mock APIs service to call any configured mock endpoint. Refer [CONFIGURATION](CONFIGURATION.md) on how to configure mock APIs.
+Refer to [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway) for proxying or gateway configuration.
+Use Gateway Mock APIs service to call any configured mock endpoint. Refer to [CONFIGURATION](CONFIGURATION.md) on how to configure mock APIs.
 
 _Note_: This sample is focused only on mocking APIs. Please consider request sanitization, error handling, etc. before using within your architecture.
 

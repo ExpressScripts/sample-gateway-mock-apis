@@ -1,6 +1,6 @@
 # Installation instructions
 
-Mock API configuration is based on below properties:
+Mock API configuration is based on the below properties:
 
 **Property** | **Description**
 -------- | -----------
@@ -17,7 +17,7 @@ order | default is zero '0', should be used 1 if its conflicting with existing e
 ***
 > mockResponse must be configured without any mapperKey or its value. mapperKey's value would be appended by framework while processing.
 
-Below is sample:
+Below is a sample:
 ```
 mockgateway:
     apis[n]:
