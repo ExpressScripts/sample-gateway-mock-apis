@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active:
+      - cloud
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 50000
+        response-timeout: 50s
+      actuator:
+        verbose:
+          enabled: true
+
+com:
+  mock:
+    enabled: true
+
+
+logging:
+  level:
+    root: info
+
+

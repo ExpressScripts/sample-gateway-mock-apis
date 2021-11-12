@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: MockGateway
+  profiles:
+    active:
+      - test
+  cloud:
+    config:
+      enabled: false
+logging:
+  level:
+    root: info
+
+com:
+  mock:
+    enabled: true
+
+mock:
+  response:
+    sampleConfigResponseKey: '{ "statusCode": 701, "statusMessage": "another sample response" }'
+
+mockgateway:
+  name: "This is Fun"
+  apiGatewayHost: https://localhost:3000
+  mockServiceHost: http://localhost:8089
+  apis[0]:
+    mockEnabled: true
+    mockName: mockSampleApi1
+    endpointCheck: /api/sample/file
+    responseFile: true
+    mockResponse: /mock/test.json
+    mockResponseStatus: 200
+    order: 0
+  apis[1]:
+    mockEnabled: true
+    mockName: mockSampleApi2
+    endpointCheck: /api/sample/config
+    responseFile: false
+    delay: 1
+    mockResponse: sampleConfigResponseKey
+    mockResponseStatus: 400
+    order: 0
+server:
+  port: 8089
