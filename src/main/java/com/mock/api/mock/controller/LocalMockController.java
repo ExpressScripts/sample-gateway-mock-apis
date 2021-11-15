@@ -45,7 +45,7 @@ public class LocalMockController {
     }
 
     @GetMapping
-    public ResponseEntity<Mono<String>> justMockResponse(
+    public ResponseEntity<Mono<String>> mockGetRequest(
             @RequestParam("originalEndpoint") String originalEndpoint,
             @RequestHeader(IS_RESPONSE_FILE) Optional<Boolean> isResponseFile,
             @RequestHeader(MOCK_RESPONSE) Optional<String> mockResponse,
@@ -59,7 +59,7 @@ public class LocalMockController {
     }
 
     @PostMapping
-    public ResponseEntity<Mono<String>> justMockResponsePost(
+    public ResponseEntity<Mono<String>> mockPostRequest(
             @RequestParam("originalEndpoint") String originalEndpoint,
             @RequestHeader(IS_RESPONSE_FILE) Optional<Boolean> isResponseFile,
             @RequestHeader(MOCK_RESPONSE) Optional<String> mockResponse,
